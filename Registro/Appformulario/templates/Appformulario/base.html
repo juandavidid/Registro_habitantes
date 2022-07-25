@@ -1,0 +1,47 @@
+<html>
+
+<head>
+    {% load static %}
+    <!-- Bootstrap -->
+    <link href="{% static 'Appformulario/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+     <!-- Fonts -->
+    
+     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet"> 
+     <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
+     <link rel="shortcut icon" type="image/x-icon" href="{% static 'Appweb/img/Imagen_icon.png' %}">
+
+     
+
+    <!-- Styles -->
+    <link href="{% static 'Appformulario/css/gestion.css' %}" rel="stylesheet">
+
+
+</head>
+
+<body>
+    
+    <div style="text-align: right; margin-right: 100px; color:white;">
+
+    {% if user.is_authenticated %}
+         
+           {{user.username}} &nbsp; &nbsp; <a href="{% url 'cerrar_sesion' %}" style="color:white;">CERRAR SESION</a>
+      
+    {% else %}
+      
+           <!--Aqu es donde se va colar el link para redireccionar a la  plantila de html  -->
+           &nbsp; &nbsp;<a href="{% url 'logear' %}" style="color:white;">INICIAR SESION</a>&nbsp; &nbsp;&nbsp; &nbsp;<a href="{% url 'autenticacion'%}" style="color:white;">REGISTRATE</a>
+      
+      
+    {% endif %}
+      
+    </div>
+
+  {% block content %}
+
+  {% endblock %}
+
+</body>
+
+
+</html>
