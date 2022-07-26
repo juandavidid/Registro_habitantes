@@ -3,9 +3,6 @@ from multiprocessing import context
 from django.shortcuts import redirect, render
 
 
-
-
-
 from django.contrib.auth.forms import UserCreationForm,AuthenticationForm
 from django.views.generic import View
 
@@ -19,7 +16,6 @@ from django.contrib import messages
 # Create your views here.
 
 class VRegistro(View):
-
 
   def get(self,request):
 
