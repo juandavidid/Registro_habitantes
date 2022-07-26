@@ -1,12 +1,12 @@
 from django.urls import path
 
-from Appformulario import views
+from Appformulario import views                     #from Appformulario import views
 
 from django.conf import settings
 from  django.conf.urls.static import static
 
 urlpatterns = [
-    path('home',views.home,name="home"),
+    path('',views.home,name="home"),
      
 ]
 
